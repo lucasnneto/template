@@ -6,6 +6,11 @@ import * as path from "path";
 export default defineConfig(async ({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   const envObj: Record<string, string> = {};
+  
+  Object.keys(env)
+  .filter((val) => /VUE_APP_/.test(val))
+  .forEach((val) => (envObj[val] = env[val]));
+
   envObj["TESTE"] = env.TESTE;
   return {
     plugins: [vue()],
