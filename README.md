@@ -10,7 +10,6 @@
             "paths": {
             "@/*": ["./src/*"]
             }
-        },
     ***
 3.  Ajustar vite.config para reconhecer envs e outras configs
 
