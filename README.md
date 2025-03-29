@@ -116,3 +116,30 @@
           </PineApp>
 
     ***
+
+   Opcionais
+A. Variaveis SCSS Globais
+> Criar arquivo @/assets/_variables.scss como exemplo abaixo
+***
+    $color-yellow: #ffc100;
+    $color-green: #009b1f;
+    $color-blue: #005fdf;
+    
+    $breakpoint-mobile: 700px;
+    $breakpoint-tablet: 1050px;
+***
+>  Ajustar vite.config para carregar as variaveis em todos arquivos.
+
+***
+    {
+    ...
+    css: {
+          preprocessorOptions: {
+            scss: {
+              additionalData: `@use "@/assets/_variables.scss" as vars;`,
+            },
+          },
+        },
+    ...
+    }
+***
